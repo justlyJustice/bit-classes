@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "13.1.5",
     "apisauce": "^2.1.6",
+    "cookies": "^0.8.0",
     "cookies-next": "^2.1.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",

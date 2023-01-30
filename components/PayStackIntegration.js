@@ -1,24 +1,35 @@
-import styles from "@/styles/Home.module.css";
-
+import { useState } from "react";
+import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import { usePaystackPayment } from "react-paystack";
 
+import styles from "@/styles/Pages.module.css";
 import getPayStackConfig from "@/config/paystack-config";
 import { regsiterCourse } from "@/services/payment";
+import setUserCookie from "@/utils/setUserCookie";
 
 const PayStackIntegration = () => {
+  const router = useRouter();
   const config = getPayStackConfig();
   const initializePayment = usePaystackPayment(config);
+  const [loading, setLoading] = useState(false);
 
   const verifyTransaction = async (reference) => {
+    setLoading(true);
     const res = await regsiterCourse(reference.reference, config.email);
+    setLoading(false);
 
     if (res.ok) {
-      alert(res.data.message);
+      setUserCookie(res.data.data);
+      toast.success(res.data.message);
+
+      setTimeout(() => {
+        router.push(`/success`);
+      }, 2000);
     }
 
     if (!res.ok) {
-      alert(res.data.message);
+      toast.error(res.data.message);
     }
   };
 
@@ -27,15 +38,24 @@ const PayStackIntegration = () => {
   };
 
   const onClose = () => {
-    toast.error(`Transaction was canceled`);
+    toast.warn(`Transaction was canceled`);
   };
 
   return (
     <button
       className={styles.payBtn}
       onClick={() => initializePayment(onSuccess, onClose)}
+      disabled={loading}
     >
-      Pay Now <i className="fa-solid fa-money-bill"></i>
+      {loading ? (
+        <>
+          Verifying Transaction <i className="fa-solid fa-spinner fa-pulse"></i>
+        </>
+      ) : (
+        <>
+          Pay Now <i className="fa-solid fa-money-bill"></i>
+        </>
+      )}
     </button>
   );
 };

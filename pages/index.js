@@ -1,15 +1,17 @@
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Pages.module.css";
 import Head from "@/components/Head";
 import Input from "@/components/forms/Input";
-
-import illustration from "@/public/assets/images/register.png";
-import { regsiterUser } from "@/services/auth";
-import { useRouter } from "next/router";
 import RegisterBtn from "@/components/RegisterBtn";
+
+import { regsiterUser } from "@/services/auth";
+import setUserCookie from "@/utils/setUserCookie";
+
+import illustration from "@/public/images/register.png";
 
 export default function Home() {
   const [values, setValues] = useState({
@@ -33,6 +35,9 @@ export default function Home() {
     setSubmitting(false);
 
     if (res.ok) {
+      const userData = res.data.data;
+      setUserCookie(userData);
+
       toast(res.data.message, { type: "success", autoClose: 2000 });
 
       setTimeout(() => {
@@ -44,7 +49,6 @@ export default function Home() {
       setSubmitting(false);
       toast.error(res.data.message);
       console.log(res);
-      console.log(res.problem);
     }
   };
 
@@ -52,7 +56,8 @@ export default function Home() {
     <>
       <Head
         title="Bit CLASSES - Payment"
-        description="ICT is made simple with our Bit CLASSES.  We teach you timely and practical topics that you would find rather difficult elsewhere… ranging from Wordpress, Back-end Development, Front-end Development, Ethical Hacking, Graphics, Social Media Utilization, e.t.c"
+        description="ICT is made simple with our Bit CLASSES. We teach you timely and practical topics that you would find rather difficult elsewhere… ranging from Wordpress, Back-end Development, Front-end Development, Ethical Hacking, Graphics, Social Media Utilization, e.t.c"
+        image="/images/web-logo.png"
       />
 
       <main className={styles.main}>
@@ -63,6 +68,7 @@ export default function Home() {
               src={illustration}
               alt={`Illustration`}
               width={300}
+              priority
               height={300}
             />
           </div>
@@ -133,3 +139,25 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = async (context) => {
+  const { req } = context;
+
+  let user;
+
+  if (req.cookies.user) {
+    user = JSON.parse(req.cookies.user);
+  }
+
+  if (user && user.hasRegistered) {
+    return {
+      redirect: {
+        destination: "/payment",
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};

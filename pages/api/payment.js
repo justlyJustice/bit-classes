@@ -9,6 +9,12 @@ import User from "@/models/User";
 export default async function handler(req, res) {
   dbConnect();
 
+  if (req.method === "GET") {
+    let payments = Payment.find().populate("paidBy");
+
+    res.status(200).json({ success: true, data: payments });
+  }
+
   if (req.method === "POST") {
     let user = await User.findOne({ email: req.body.email });
 
@@ -35,6 +41,10 @@ export default async function handler(req, res) {
 
     res
       .status(200)
-      .json({ success: true, message: "Payment verified and completed" });
+      .json({
+        success: true,
+        data: user,
+        message: "Payment verified and completed",
+      });
   }
 }

@@ -1,13 +1,10 @@
-import { Alfa_Slab_One } from "@next/font/google";
-
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
 
-import illustration from "@/public/assets/images/payment.png";
-import PayStackIntegration from "@/components/PayStackIntegration";
 import Head from "@/components/Head";
+import PayStackIntegration from "@/components/PayStackIntegration";
 
-const alfa_slab = Alfa_Slab_One({ weight: "400", subsets: ["latin"] });
+import illustration from "@/public/images/payment.png";
+import styles from "@/styles/Pages.module.css";
 
 const Payment = () => {
   return (
@@ -15,6 +12,7 @@ const Payment = () => {
       <Head
         title="Bit CLASSES - Payment"
         description="ICT is made simple with our Bit CLASSES.  We teach you timely and practical topics that you would find rather difficult elsewhere… ranging from Wordpress, Back-end Development, Front-end Development, Ethical Hacking, Graphics, Social Media Utilization, e.t.c"
+        image="/images/web-logo.png"
       />
 
       <main className={styles.main}>
@@ -28,7 +26,7 @@ const Payment = () => {
           />
 
           <div className={styles.payment}>
-            <h2 className={alfa_slab.className}>Continue To Payment</h2>
+            <h2>Continue To Payment</h2>
 
             <PayStackIntegration />
           </div>
@@ -36,6 +34,24 @@ const Payment = () => {
       </main>
     </>
   );
+};
+
+export const getServerSideProps = async (context) => {
+  const { req } = context;
+
+  const user = JSON.parse(req.cookies.user);
+
+  if (user && user.hasRegistered && user.isPaymentConfirmed) {
+    return {
+      redirect: {
+        destination: "/success",
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default Payment;

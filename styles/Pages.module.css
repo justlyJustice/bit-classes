@@ -107,6 +107,8 @@
 }
 
 .payment h2 {
+  font-family: Alfa Slab One;
+  font-weight: 400;
   margin: 4px 0;
   text-align: center;
 }
@@ -125,6 +127,36 @@
   margin: auto auto;
   padding: 10px 8px;
   width: 80%;
+}
+
+/* Success page*/
+.successContent {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 64px 53px -44px rgba(0, 0, 0, 0.37);
+  border-top: 4px solid blueviolet;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.successTextContain {
+  text-align: center;
+}
+
+.successTextContain h2 {
+  background: linear-gradient(to right, blueviolet, rgb(191, 58, 232));
+  font-family: Alfa Slab One;
+  font-size: 2rem;
+  font-weight: 400;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.successTextContain p {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 700px) {
@@ -171,7 +203,6 @@
   }
 
   /* Payment Page*/
-
   .payment {
     background-color: white;
     box-shadow: 0px 64px 53px -44px rgba(0, 0, 0, 0.37);
@@ -200,5 +231,19 @@
     margin: auto auto;
     padding: 10px 8px;
     width: 80%;
+  }
+
+  /* Success page*/
+  .successContent {
+    padding: 30px;
+  }
+
+  .successTextContain h2 {
+    font-size: 1.8rem;
+  }
+
+  .successTextContain p {
+    color: #333;
+    font-size: 0.9rem;
   }
 }

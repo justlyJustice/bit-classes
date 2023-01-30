@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
     <>
       {children}
       <p className={styles.para}>
-        &copy; Boungbai Computers Netware - Bit CLASSES 2023
+        &copy; Boungbai Computers Netware Ltd. - Bit CLASSES 2023
       </p>
     </>
   );
