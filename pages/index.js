@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <Head
-        title="Bit CLASSES - Payment"
+        title="Bit CLASSES - Registration"
         description="ICT is made simple with our Bit CLASSES. We teach you timely and practical topics that you would find rather difficult elsewhere… ranging from Wordpress, Back-end Development, Front-end Development, Ethical Hacking, Graphics, Social Media Utilization, e.t.c"
         image="/images/web-logo.png"
       />
