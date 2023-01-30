@@ -1,4 +1,5 @@
 import getCurrentUser from "@/utils/getCurrentUser";
+import publicKey from "./paystack-key";
 
 const getPayStackConfig = () => {
   const user = getCurrentUser();
@@ -11,8 +12,7 @@ const getPayStackConfig = () => {
     },
     email: user && user.email,
     amount: 300000,
-    // publicKey: process.env.PK_TEST_KEY,
-    publicKey: `pk_test_54fa9d1c5c347d77faab46260392e8b92306f20f`,
+    publicKey,
   };
 };
 
