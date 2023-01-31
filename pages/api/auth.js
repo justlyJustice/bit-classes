@@ -1,10 +1,8 @@
-import Cookies from "cookies";
-
 import dbConnect from "@/utils/dbConnect";
 import User from "@/models/User";
+import setUserCookie from "@/utils/setUserCookie";
 
 export default async function handler(req, res) {
-  const cookies = new Cookies(req, res, { keys: ["auth"] });
   dbConnect();
 
   if (req.method === "POST") {
@@ -24,20 +22,8 @@ export default async function handler(req, res) {
     });
     await user.save();
 
-    /*  const options = {
-      req,
-      res,
-      expires: new Date(
-        Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-      ),
-      httpOnly: true,
-    };
+    setUserCookie(user, req, res);
 
-    if (process.env.NODE_ENV === "production") {
-      options.secure = true;
-    }
-
-    cookies.set("auth", JSON.stringify(user), options); */
     res.status(201).json({
       success: true,
       message: "Registration successful!",

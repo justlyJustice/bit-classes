@@ -23,6 +23,7 @@ const Payment = () => {
             alt={`Illustration`}
             width={300}
             height={300}
+            priority
           />
 
           <div className={styles.payment}>

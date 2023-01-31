@@ -3,6 +3,7 @@
   font-style: italic;
   font-weight: 400;
   left: 50%;
+  text-align: center;
   transform: translateX(-50%);
   position: absolute;
   top: 90%;

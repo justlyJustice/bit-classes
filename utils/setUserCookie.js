@@ -1,18 +1,18 @@
-import Cookies from "js-cookie";
+import { setCookie } from "cookies-next";
 
-const setUserCookie = (userData) => {
+const setUserCookie = (userData, req, res) => {
   const options = {
+    req,
+    res,
     sameSite: "strict",
-    expires: new Date(
-      Date.now() + process.env.NEXT_PUBLIC_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
-    ),
+    expires: new Date("10 February 2023 12:00:00"),
   };
 
   if (process.env.NODE_ENV === "production") {
     options.secure = true;
   }
 
-  return Cookies.set(
+  return setCookie(
     "user",
     JSON.stringify({
       email: userData.email,

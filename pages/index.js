@@ -9,7 +9,6 @@ import Input from "@/components/forms/Input";
 import RegisterBtn from "@/components/RegisterBtn";
 
 import { regsiterUser } from "@/services/auth";
-import setUserCookie from "@/utils/setUserCookie";
 
 import illustration from "@/public/images/register.png";
 
@@ -35,9 +34,6 @@ export default function Home() {
     setSubmitting(false);
 
     if (res.ok) {
-      const userData = res.data.data;
-      setUserCookie(userData);
-
       toast(res.data.message, { type: "success", autoClose: 2000 });
 
       setTimeout(() => {

@@ -20,6 +20,7 @@ const Success = () => {
               height={200}
               src={`/images/success.png`}
               alt={`success`}
+              priority
             />
           </div>
 

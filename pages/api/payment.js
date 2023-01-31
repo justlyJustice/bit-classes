@@ -5,6 +5,7 @@ const paystack = require("paystack-api")(SK_KEY);
 
 import dbConnect from "@/utils/dbConnect";
 import User from "@/models/User";
+import setUserCookie from "@/utils/setUserCookie";
 
 export default async function handler(req, res) {
   dbConnect();
@@ -39,12 +40,12 @@ export default async function handler(req, res) {
     user.payment = payment._id;
     await user.save();
 
-    res
-      .status(200)
-      .json({
-        success: true,
-        data: user,
-        message: "Payment verified and completed",
-      });
+    setUserCookie(user, req, res);
+
+    res.status(200).json({
+      success: true,
+      data: user,
+      message: "Payment verified and completed",
+    });
   }
 }

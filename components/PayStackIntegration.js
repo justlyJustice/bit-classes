@@ -6,7 +6,6 @@ import { usePaystackPayment } from "react-paystack";
 import styles from "@/styles/Pages.module.css";
 import getPayStackConfig from "@/config/paystack-config";
 import { regsiterCourse } from "@/services/payment";
-import setUserCookie from "@/utils/setUserCookie";
 
 const PayStackIntegration = () => {
   const router = useRouter();
@@ -20,7 +19,6 @@ const PayStackIntegration = () => {
     setLoading(false);
 
     if (res.ok) {
-      setUserCookie(res.data.data);
       toast.success(res.data.message);
 
       setTimeout(() => {
