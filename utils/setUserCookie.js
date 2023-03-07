@@ -1,12 +1,14 @@
 import { setCookie } from "cookies-next";
 
 const setUserCookie = (userData, req, res) => {
-  var date = new Date();
   const options = {
     req,
     res,
     sameSite: "strict",
-    expires: date.setTime(date.getTime() + Date.now() * 24 * 60 * 60 * 1000),
+    expires: new Date(
+      Date.now() +
+        process.env.NEXT_PUBLIC_JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+    ),
   };
 
   if (process.env.NODE_ENV === "production") {
