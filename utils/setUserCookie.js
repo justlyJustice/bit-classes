@@ -1,12 +1,15 @@
 import { setCookie } from "cookies-next";
 
 const setUserCookie = (userData, req, res) => {
-  const expireDate = new Date();
+  var date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  var expires = "; expires=" + date.toGMTString();
+
   const options = {
     req,
     res,
     sameSite: "strict",
-    expires: expireDate.setMonth(expireDate.getMonth() + 1),
+    expires,
   };
 
   if (process.env.NODE_ENV === "production") {
