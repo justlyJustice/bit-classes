@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 import MONGO_URL from "@/config/mongo-url";
 
-/* const MONGO_URL =
-  process.env.NODE_ENV === "development"
-    ? process.env.DEV_MONGO_URI
-    : process.env.PROD_MONGO_URI; */
-
 if (!MONGO_URL) {
   throw new Error(
     "Please define the MONGO_URL environment variable inside .env.local"

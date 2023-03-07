@@ -40,7 +40,11 @@ const Payment = () => {
 export const getServerSideProps = async (context) => {
   const { req } = context;
 
-  const user = JSON.parse(req.cookies.user);
+  let user;
+
+  if (req.cookies.user) {
+    user = JSON.parse(req.cookies.user);
+  }
 
   if (user && user.hasRegistered && user.isPaymentConfirmed) {
     return {
@@ -52,6 +56,9 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {},
+    redirect: {
+      destination: "/",
+    },
   };
 };
 

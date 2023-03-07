@@ -1,11 +1,12 @@
 import { setCookie } from "cookies-next";
 
 const setUserCookie = (userData, req, res) => {
+  const expireDate = new Date();
   const options = {
     req,
     res,
     sameSite: "strict",
-    expires: new Date("10 February 2023 12:00:00"),
+    expires: expireDate.setMonth(expireDate.getMonth() + 1),
   };
 
   if (process.env.NODE_ENV === "production") {
