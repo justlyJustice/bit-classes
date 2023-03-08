@@ -6,8 +6,7 @@ const setUserCookie = (userData, req, res) => {
     res,
     sameSite: "strict",
     expires: new Date(
-      Date.now() +
-        process.env.NEXT_PUBLIC_JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
   };
 

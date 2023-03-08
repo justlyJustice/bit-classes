@@ -14,6 +14,7 @@
     "cookies-next": "^2.1.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.0",
     "next": "13.1.5",
     "paystack-api": "^2.0.6",

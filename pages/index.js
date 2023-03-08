@@ -73,7 +73,7 @@ export default function Home() {
             <div className={styles.textContain}>
               <h1>Bit CLASSES</h1>
               <p>
-                Register for <span>Ethical Hacking</span> Course
+                Register for <span>Cuber Security</span> Course
               </p>
 
               <hr />

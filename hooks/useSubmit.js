@@ -11,13 +11,13 @@ const useSubmit = (apiFunc) => {
   const { push } = useRouter();
 
   const submit = async (
-    urlParam,
+    funcParam,
     navigateTo,
     successMessage = `Submitted Successfully!`,
     resetForm
   ) => {
     setSubmitting(true);
-    const res = await apiFunc(urlParam);
+    const res = await apiFunc(funcParam);
     setSubmitting(false);
 
     if (res.ok) {
