@@ -10,6 +10,10 @@ const CustomHead = ({ description, title, image }) => {
       <meta name="description" content={description} />
       <meta property="image" content={image} />
       <meta property="url" content={currentUrl} />
+      <meta
+        name="keywords"
+        content="bit-classes, boungbai, courses, computer, bit classes, justice johnson, boungbai computers netware ltd, computer"
+      />
 
       {/* Google / Search Engine Tags */}
       <meta itemProp="name" content={title} />

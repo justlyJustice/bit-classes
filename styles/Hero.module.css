@@ -1,0 +1,35 @@
+.hero {
+  align-items: center;
+  background-color: rgb(20, 1, 38);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+.textContain {
+  margin: auto 70px;
+}
+
+.textContain h3 {
+  color: blueviolet;
+  font-size: 100px;
+}
+
+.textContain p {
+  font-family: Raleway;
+  font-size: 24px;
+}
+
+.btnContain {
+  margin: 20px auto;
+}
+
+.btnContain button {
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: Raleway;
+  padding: 10px;
+  width: 140px;
+}

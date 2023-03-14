@@ -8,10 +8,10 @@ const getPayStackConfig = () => {
     reference: new Date().getTime().toString(),
     metadata: {
       name: user && user.name,
-      description: `Bit CLASSES course registration and payment.`,
+      description: `Bit CLASS course payment for ${user && user.name}`,
     },
     email: user && user.email,
-    amount: 300000,
+    amount: 330000,
     publicKey,
   };
 };

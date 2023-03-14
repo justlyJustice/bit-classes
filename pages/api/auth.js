@@ -16,6 +16,7 @@ export default async function handler(req, res) {
       name: req.body.name,
       email: req.body.email,
       gender: req.body.gender,
+      phone: req.body.phone,
       isPaymentConfirmed: false,
       hasRegistered: true,
       payment: null,

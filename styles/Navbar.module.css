@@ -1,0 +1,28 @@
+.nav {
+  align-items: center;
+  background-color: blueviolet;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 80px;
+}
+
+.logo {
+  font-family: Alfa Slab One;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.navLinks {
+  align-items: center;
+  display: flex;
+  font-family: Raleway;
+  justify-content: space-around;
+}
+
+.navLinks .link {
+  font-weight: 700;
+  margin: 0rem 10px;
+  position: relative;
+  transition: ease-in-out all 0.3s;
+}

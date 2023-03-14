@@ -3,20 +3,20 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-import styles from "@/styles/Pages.module.css";
 import Head from "@/components/Head";
 import Input from "@/components/forms/Input";
 import RegisterBtn from "@/components/RegisterBtn";
 
-import { regsiterUser } from "@/services/auth";
-
 import illustration from "@/public/images/register.png";
+import { regsiterUser } from "@/services/auth";
+import styles from "@/styles/Pages.module.css";
 
 export default function Home() {
   const [values, setValues] = useState({
     name: "",
     email: "",
     gender: "",
+    phone: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const { push } = useRouter();
@@ -73,7 +73,8 @@ export default function Home() {
             <div className={styles.textContain}>
               <h1>Bit CLASSES</h1>
               <p>
-                Register for <span>Cuber Security</span> Course
+                <span>Cyber Security</span>: How to Secure Your <br /> wireless
+                Network.
               </p>
 
               <hr />
@@ -97,6 +98,16 @@ export default function Home() {
                   value={values.email}
                   onChange={handleChange}
                   placeholder="Enter email here"
+                  required
+                />
+
+                <Input
+                  label="Phone Number"
+                  name="phone"
+                  type="number"
+                  value={values.phone}
+                  onChange={handleChange}
+                  placeholder="Enter phone number here"
                   required
                 />
 

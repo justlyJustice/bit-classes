@@ -12,13 +12,7 @@ client.axiosInstance.interceptors.response.use(null, (error) => {
     error.response.status >= 400 &&
     error.response.status < 500;
 
-  if (!expectedError) {
-    toast.error("Server error!!!", {
-      autoClose: 3000,
-      closeButton: true,
-      type: "error",
-    });
-  }
+  if (!expectedError) toast.error("Server error!!!", { closeButton: true });
 
   return Promise.reject(error);
 });
