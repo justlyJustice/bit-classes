@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       {children}
       {/* <div>
         <p className={styles.para}>
