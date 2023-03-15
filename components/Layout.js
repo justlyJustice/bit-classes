@@ -1,17 +1,15 @@
 import styles from "@/styles/Layout.module.css";
+
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <>
-      {/* <Navbar /> */}
+    <div className={styles.layout}>
+      {/*  <Navbar /> */}
       {children}
-      {/* <div>
-        <p className={styles.para}>
-          &copy; Boungbai Computers Netware Ltd. - Bit CLASSES 2023
-        </p>
-      </div> */}
-    </>
+      <Footer />
+    </div>
   );
 };
 

@@ -1,0 +1,17 @@
+.container {
+  background-color: rgb(36, 33, 33);
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 300px; */
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+}
+
+.content h1 {
+  color: white;
+}

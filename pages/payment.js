@@ -27,7 +27,7 @@ const Payment = () => {
           />
 
           <div className={styles.payment}>
-            <h2>Continue To Payment</h2>
+            <h2>Pay Now</h2>
 
             <PayStackIntegration />
           </div>

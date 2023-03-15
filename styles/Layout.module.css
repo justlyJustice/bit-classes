@@ -1,12 +1,19 @@
+.layout {
+  min-height: 100vh;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
 .para {
   font-family: Montserrat;
   font-style: italic;
-  font-weight: 400;
-  left: 50%;
+  font-weight: 300;
   text-align: center;
-  transform: translateX(-50%);
-  position: absolute;
-  top: 90%;
 }
 
 @media screen and (max-width: 700px) {

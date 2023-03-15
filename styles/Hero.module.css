@@ -1,35 +1,46 @@
 .hero {
   align-items: center;
-  background-color: rgb(20, 1, 38);
+  background-image: linear-gradient(
+      to right,
+      rgba(135, 37, 227, 0.786),
+      rgba(96, 6, 179, 0.517)
+    ),
+    url("../public/images/4734691_2202758.jpg");
+  background-size: cover;
+  /*   background-repeat: repeat-y;
+  background-position-x: right; */
   display: flex;
   height: 100vh;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
 }
 
 .textContain {
-  margin: auto 70px;
+  color: white;
+  line-height: 60px;
+  margin-left: 100px;
+  /*   margin: auto 120px; */
 }
 
 .textContain h3 {
-  color: blueviolet;
-  font-size: 100px;
+  font-weight: bolder;
+  font-size: 90px;
 }
 
 .textContain p {
-  font-family: Raleway;
-  font-size: 24px;
+  font-size: 400;
+  font-size: 20px;
 }
 
 .btnContain {
-  margin: 20px auto;
+  /* margin: 10px auto; */
 }
 
 .btnContain button {
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgb(255, 152, 56);
+  border-radius: 5px;
+  color: white;
   cursor: pointer;
   font-family: Raleway;
-  padding: 10px;
-  width: 140px;
+  padding: 12px 10px;
+  width: 50%;
 }

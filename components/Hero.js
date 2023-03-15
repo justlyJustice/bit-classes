@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "@/styles/Hero.module.css";
 
 const Hero = () => {
@@ -9,7 +8,7 @@ const Hero = () => {
         <p>ICT made simple</p>
 
         <div className={styles.btnContain}>
-          <button>Learn More</button>
+          <button>Learn More </button>
         </div>
       </div>
     </section>

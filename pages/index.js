@@ -3,6 +3,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
+import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
 import Head from "@/components/Head";
 import Input from "@/components/forms/Input";
 import RegisterBtn from "@/components/RegisterBtn";
@@ -51,11 +53,15 @@ export default function Home() {
   return (
     <>
       <Head
-        title="Bit CLASSES - Registration"
+        title="Bit CLASSES"
         description="ICT is made simple with our Bit CLASSES. We teach you timely and practical topics that you would find rather difficult elsewhere… ranging from Wordpress, Back-end Development, Front-end Development, Ethical Hacking, Graphics, Social Media Utilization, e.t.c"
         image="/images/web-logo.png"
       />
 
+      {/* <Hero />
+
+      <AboutSection />
+ */}
       <main className={styles.main}>
         <div className={styles.content}>
           <div className={styles.img_contain}>
@@ -72,12 +78,19 @@ export default function Home() {
           <div className={styles.otherContent}>
             <div className={styles.textContain}>
               <h1>Bit CLASSES</h1>
+
               <p>
-                <span>Cyber Security</span>: How to Secure Your <br /> wireless
+                <span>Cyber Security: </span>How to Secure Your wireless
                 Network.
               </p>
 
               <hr />
+
+              <div className={styles.price}>
+                <p>
+                  <b>Course price: $7</b>
+                </p>
+              </div>
             </div>
 
             <div className={styles.formContain}>
@@ -114,18 +127,18 @@ export default function Home() {
                 <div className={styles.gender}>
                   <span>Gender</span>
 
-                  <div className={styles.male}>
+                  <div className={styles.option}>
                     <input
                       type="radio"
                       name="gender"
                       value="male"
                       id="male"
                       onChange={handleChange}
-                    />{" "}
+                    />
                     <label htmlFor="male">Male</label>
                   </div>
 
-                  <div className="female">
+                  <div className={styles.option}>
                     <input
                       type="radio"
                       name="gender"

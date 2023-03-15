@@ -1,7 +1,7 @@
 .nav {
   align-items: center;
-  background-color: blueviolet;
-  color: white;
+  background-color: rgb(248, 240, 233);
+  /*   color: white; */
   display: flex;
   justify-content: space-between;
   padding: 25px 80px;

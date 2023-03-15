@@ -5,16 +5,24 @@
 }
 
 .group label {
+  color: rgb(32, 1, 60);
+  font-family: Poppins;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .group input {
-  background-color: ghostwhite;
+  background-color: white;
   border-radius: 40px;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-weight: 500;
   color: #333;
   padding: 10px 20px;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .group input {
+    background-color: ghostwhite;
+  }
 }
